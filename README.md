@@ -17,8 +17,12 @@ Select "JuliaPro-0.6.2.1-MKL (for Mac)". Once the download is complete, uncompre
 Those installations will install Julia (command line version) and should install Juno as well, a Julia IDE based on Atom. If you have trouble installing Juno, we recommend to look at this page: https://github.com/JunoLab/uber-juno/blob/master/setup.md.
 
 # Installing packages
-Packages are installed thanks to Julia commands (https://docs.julialang.org/en/stable/stdlib/pkg/#Base.Pkg.add).
+Packages are installed thanks to Julia commands (https://docs.julialang.org/en/stable/stdlib/pkg/#Base.Pkg.add). The most common way to install and use packages is:
+<pre><code>Pkg.add("packageName")  
+using packageName</pre></code>
 
 
-# Running with the example
-Make sure 
+
+
+# Running the example
+Prior to running the example featured in that repository, make sure you installed required packages as explained in the [Installing packages](#installing-packages) paragraph.

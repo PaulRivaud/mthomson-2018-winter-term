@@ -48,9 +48,11 @@ function MBG(p::String,species::String="mm10")
     GE=read(f[species*"/genes"])::Vector{String} #gene names
     B=read(f[species*"/barcodes"]) #barcode names
     IP=read(f[species*"/indptr"])::Vector{Int64} #col pointers
-    S=read(f[species*"/shape"])::Vector{Int32} #shape tuple (m,n) m rows n cols
-    GI+=1; #Julia indexing starts at 1
-    IP+=1; #Julia indexing starts at 1
+    S=read(f[species*"/shape"])::Vector{Int64} #shape tuple (m,n) m rows n cols
+    if IP[1] == 0 #check if the first col pointer points to 0 or 1 (if 1, h5 file is already properly indexed)
+        GI+=1; #Julia indexing starts at 1
+        IP+=1; #Julia indexing starts at 1
+    end
     G = [uppercase(x) for x in G] #meet uppercase standards for gene names
     #if the gene indices are sorted in descending order for each cell (true for h5 files output by the cellranger count pipeline)
     #this is necessary to properly build a SparseMatrixCSC obj in Julia

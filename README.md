@@ -7,7 +7,18 @@ This Github repository contains data files and code examples to get you started 
 [Running the julia example](#running-the-julia-example)
 
 # Basic information regarding data files
-Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays. Dataframe objects (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.
+Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays. Dataframe objects (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.  
+* Sparse Matrices (mtx format):  
+[Info here](https://math.nist.gov/MatrixMarket/formats.html#MMformat)  
+Mtx files store MatrixMarket format matrices. The base principle is to store the row and column indices of each non-zero entry in the matrix. The MatrixMarket format contains three distinct parts:  
+    - Comment lines that start with `%`
+    - Header line: total number of rows, total number of columns, total number of non-zeros entries (space separated)
+    - Entries: row index, column index, entry value (space separated)
+* Sparse matrices (h5 format):  
+[Info here](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/h5_matrices)  
+HDF5 can store MatrixMarket objects, but can also deconstruct the sparse matrix into multiple vectors: the sparse matrix is a Matrix Market object in RAM when used, but is not stored as one. The different vectors are:
+    - data: non-zero entry values (length: number of entries)
+    - indices
 
 # Installing Julia (and Juno)
 Visit the JuliaComputing web page https://juliacomputing.com/products/juliapro.html to navigate your way to the download section. You may be asked to enter an email address to have access to a free download.

@@ -1,6 +1,7 @@
 # Introduction
 
 This Github repository contains data files and code examples to get you started in the Computational Biology class taught by Matt Thomson at Caltech. The goal of this course is to have the students analyze some single-cell sequencing data using programming languages (Julia, R, Python, Matlab, etc.). The content of this README is listed below:  
+  
 [Basic information regarding data files](#basic-information-regarding-data-files)  
 [Installing Julia (and Juno)](#installing-julia-and-juno)  
 [Installing packages in Julia](#installing-packages-in-julia)  

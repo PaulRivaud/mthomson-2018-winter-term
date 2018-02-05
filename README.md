@@ -8,7 +8,7 @@ This Github repository contains data files and code examples to get you started 
 [Running the julia example](#running-the-julia-example)
 
 # Basic information regarding data files
-Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays. Dataframe objects (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.  
+Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays (<span style="color:red">Reminder: Array indexing starts at 0 in Python, 1 in Julia, R and Matlab</span>). Dataframe objects (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.  
 * Sparse Matrices (MatrixMarket/.mtx format):  
 [Info here](https://math.nist.gov/MatrixMarket/formats.html#MMformat)  
 Mtx files store MatrixMarket format matrices. The base principle is to store the row and column indices of each non-zero entry in the matrix. The MatrixMarket format contains three distinct parts:  

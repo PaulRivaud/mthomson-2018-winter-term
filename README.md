@@ -18,7 +18,10 @@ Mtx files store MatrixMarket format matrices. The base principle is to store the
 [Info here](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/h5_matrices)  
 HDF5 can store MatrixMarket objects, but can also deconstruct the sparse matrix into multiple vectors: the sparse matrix is a Matrix Market object in RAM when used, but is not stored as one. The different vectors are:
     - data: non-zero entry values (length: number of entries)
-    - indices
+    - indices: row indices (length: number of entries)
+    - indptr: column index pointers. Index of the start of each column (length: number of columns +1, the last value indicates the end index of the last column +1).
+    - barcodes: barcode labels (length: number of columns)
+    - gene_names: gene labels (length: number of rows)
 
 # Installing Julia (and Juno)
 Visit the JuliaComputing web page https://juliacomputing.com/products/juliapro.html to navigate your way to the download section. You may be asked to enter an email address to have access to a free download.

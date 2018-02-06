@@ -32,13 +32,22 @@ Mtx files store MatrixMarket format matrices. The base principle is to store the
 
 * Sparse matrices (MatrixMarket deconstructed into multiple vectors):  
 [Info here (10X's HDF5 format)](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/h5_matrices)  
-10X Genomics also deconstructs the sparse matrix into multiple vectors: the sparse matrix is a Matrix Market object in RAM when used, but is not stored as one under their HDF5 format. The different vectors are:
-    - data: non-zero entry values (length: number of entries)
-    - indices: row indices (length: number of entries)
-    - indptr: column index pointers. Index of the start of each column (length: number of columns +1, the last value indicates the end index of the last column +1).
-    - barcodes: barcode labels (length: number of columns)
-    - gene_names: gene labels (length: number of rows)  
-Storing all these vectors under one file enables users to not lose track of matrices respective's labels.  
+10X Genomics also deconstructs sparse matrices into multiple vectors: the sparse matrix is a Matrix Market object in RAM when used, but is not stored as one under their HDF5 format. Storing all these vectors under one file enables users to not lose track of matrices respective's labels. The different vectors are:
+    - `data (or nzval)`: non-zero entry values (length: number of entries)
+    - `indices (or rowval)`: row indices (length: number of entries)
+    - `indptr (or colptr)`: column index pointers. Index of the start of each column (length: number of columns +1, the last value indicates the end index of the last column +1).
+    - `barcodes`: barcode labels (length: number of columns)
+    - `gene_names`: gene labels (length: number of rows)  
+We can illustrate this concept with a Julia example. Lets' consider the following matrix:  
+`5×3 Array{Int64,2}:  
+1000  1200    0  
+0     0    2  
+2   400    0  
+0     0  500  
+0     0    0  
+`
+
+
 
 # Julia  
 

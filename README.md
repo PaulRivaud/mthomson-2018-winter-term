@@ -3,11 +3,11 @@
 This Github repository contains data files and code examples to get you started in the Computational Biology class taught by Matt Thomson at Caltech. The goal of this course is to have the students analyze some single-cell sequencing data using programming languages (Julia, R, Python, Matlab, etc.). The content of this README is listed below:  
   
 [Basic information regarding data files](#basic-information-regarding-data-files)  
-[Julia](#julia-)  
+__Julia__  
 [Installing Julia (and Juno)](#installing-julia-and-juno)  
 [Installing packages in Julia](#installing-packages-in-julia)  
 [Running the julia example](#running-the-julia-example)  
-[R](#r-)  
+__R__  
 [Loading mtx files in R](#loading-mtx-files-in-r)
 
 # Basic information regarding data files
@@ -57,4 +57,6 @@ Look up the [Installing packages](#installing-packages) section to learn more ab
 # R  
 
 ## Loading mtx files in R
-R base package `Matrix` lets you load .mtx files directly.  
+R base package [`Matrix`](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/html/externalFormats.html) lets you load .mtx files directly. The object is a [dgTMatrix](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/html/dgTMatrix-class.html).You can load a file as shown below:  
+<pre><code>> readMM("path_to_matrix/matrix.mtx")  
+32738 x 1985 sparse Matrix of class "dgTMatrix"</pre></code> 

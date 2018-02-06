@@ -14,7 +14,7 @@ __Python__
 [Loading H5 files in Python](#loading-h5-files-in-python)  
 
 # Basic information regarding data files
-Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays (**Reminder: Array indexing starts at 0 in Python, 1 in Julia, R and Matlab**). Dataframe objects (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.  
+Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays (**Reminder: Array indexing starts at 0 in Python, 1 in Julia, R and Matlab**). Dataframe objects ie dense matrices (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.  
   
 Once unziped, the data folders contain three files:  
 -- `matrix.mtx`: the read values of the gene expression matrix and their respective row and column indices, in a matrix market format.  
@@ -125,8 +125,14 @@ Note: Even though Matrix is a base R package, it has to be loaded manually (thro
 # Python  
 
 ## Loading mtx files in Python
-Mtx files can be loaded in Python using the `io` module of Scipy. There are multiple ways to install Scipy (Homebrew, pip, conda, etc.). For example:
-<pre><code>pip install scipy</pre></code>
+Mtx files can be loaded in Python using the `io` module of Scipy. There are multiple ways to install Scipy (Homebrew, pip, conda, etc.). For example, type in your terminal:
+<pre><code>pip install scipy</pre></code>  
+You can then use in Python:
+<pre><code>
+import scipy.io
+M = scipy.io.mmread('path_to_matrix/matrix.mtx')
+</pre></code>  
+M is a [coo_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html) object, you can use M.[tocsc](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.tocsc.html#scipy.sparse.coo_matrix.tocsc)() to convert the coo_matrix to a [csc_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html).
 
 
 ## Loading H5 files in Python  

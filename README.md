@@ -5,7 +5,8 @@ This Github repository contains data files and code examples to get you started 
 [Basic information regarding data files](#basic-information-regarding-data-files)  
 [Installing Julia (and Juno)](#installing-julia-and-juno)  
 [Installing packages in Julia](#installing-packages-in-julia)  
-[Running the julia example](#running-the-julia-example)
+[Running the julia example](#running-the-julia-example)  
+[Loading mtx files in R](#loading-mtx-files-in-r)
 
 # Basic information regarding data files
 Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays (**Reminder: Array indexing starts at 0 in Python, 1 in Julia, R and Matlab**). Dataframe objects (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.  
@@ -51,5 +52,3 @@ Look up the [Installing packages](#installing-packages) section to learn more ab
 
 # Loading mtx files in R
 R base package `Matrix` lets you load .mtx files directly.  
-> test  
-gwr

@@ -11,7 +11,6 @@ __R__
 [Loading mtx files in R](#loading-mtx-files-in-r)  
 __Python__  
 [Loading mtx files in Python](#loading-mtx-files-in-python)  
-[Loading H5 files in Python](#loading-h5-files-in-python)  
 
 # Basic information regarding data files
 Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays (**Reminder: Array indexing starts at 0 in Python, 1 in Julia, R and Matlab**). Dataframe objects ie dense matrices (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.  
@@ -133,9 +132,3 @@ import scipy.io
 M = scipy.io.mmread('path_to_matrix/matrix.mtx')
 </pre></code>  
 M is a [coo_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html) object, you can use M.[tocsc](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.tocsc.html#scipy.sparse.coo_matrix.tocsc)() to convert the coo_matrix to a [csc_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html). The latter sorts the columns in the object which facilitates column-based operations.
-
-
-
-
-## Loading H5 files in Python  
-wegfw

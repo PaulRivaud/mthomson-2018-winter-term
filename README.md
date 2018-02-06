@@ -28,6 +28,7 @@ Mtx files store MatrixMarket format matrices. The base principle is to store the
     - Header line: total number of rows, total number of columns, total number of non-zeros entries (space separated)
     - Entries: row index, column index, entry value (space separated)  
 The gene and barcode labels are stored in separate files and need to be read separately.  
+
 * Sparse matrices (MatrixMarket deconstructed into multiple vectors):  
 [Info here (10X's HDF5 format)](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/h5_matrices)  
 10X Genomics also deconstructs the sparse matrix into multiple vectors: the sparse matrix is a Matrix Market object in RAM when used, but is not stored as one under their HDF5 format. The different vectors are:

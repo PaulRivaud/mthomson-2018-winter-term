@@ -8,7 +8,7 @@ __Julia__
 [Installing packages in Julia](#installing-packages-in-julia)  
 [Running the julia example](#running-the-julia-example)  
 __R__  
-[Loading mtx files in R](#loading-mtx-files-in-r)
+[Loading mtx files in R](#loading-mtx-files-in-r)  
 [Loading H5 files in R](#loading-h5-files-in-r)  
 __Python__  
 [Loading mtx files in Python](#loading-mtx-files-in-python)  

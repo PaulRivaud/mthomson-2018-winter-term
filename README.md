@@ -78,7 +78,7 @@ Int64[6]
 2
 4
 
-#start of each column. Length is #col +1
+#start of each column. Length is number of cols + 1
 M.colptr 
 Int64[4]
 1
@@ -120,12 +120,14 @@ R base package [`Matrix`](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/h
 <pre><code>> readMM("path_to_matrix/matrix.mtx")  
 32738 x 1985 sparse Matrix of class "dgTMatrix"</pre></code> 
 
-Note: Even though Matrix is a base R package, it has to be loaded manually (`Packages` section in R studio or `library("Matrix")` in the R console.)
+Note: Even though Matrix is a base R package, it has to be loaded manually (through the `Packages` section in R studio or `library("Matrix")` in the R console.)
 
 # Python  
 
 ## Loading mtx files in Python
-rgewrerg  
+Mtx files can be loaded in Python using the `io` module of Scipy. There are multiple ways to install Scipy (Homebrew, pip, conda, etc.). For example:
+<pre><code>pip install scipy</pre></code>
+
 
 ## Loading H5 files in Python  
 wegfw

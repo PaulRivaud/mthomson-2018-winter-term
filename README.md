@@ -9,13 +9,18 @@ __Julia__
 [Running the julia example](#running-the-julia-example)  
 __R__  
 [Loading mtx files in R](#loading-mtx-files-in-r)  
-[Loading H5 files in R](#loading-h5-files-in-r)  
 __Python__  
 [Loading mtx files in Python](#loading-mtx-files-in-python)  
 [Loading H5 files in Python](#loading-h5-files-in-python)  
 
 # Basic information regarding data files
 Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays (**Reminder: Array indexing starts at 0 in Python, 1 in Julia, R and Matlab**). Dataframe objects (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.  
+  
+Once unziped, the data folders contain three files:  
+-- `matrix.mtx`: the read values of the gene expression matrix and their respective row and column indices, in a matrix market format.  
+-- `barcodes.tsv`: a file containing the column (cell) labels.  
+-- `genes.tsv`: a file containing the row (gene) labels.  
+
 * Sparse Matrices (MatrixMarket/.mtx format):  
 [Info here](https://math.nist.gov/MatrixMarket/formats.html#MMformat)  
 Mtx files store MatrixMarket format matrices. The base principle is to store the row and column indices of each non-zero entry in the matrix. The MatrixMarket format contains three distinct parts:  
@@ -23,9 +28,9 @@ Mtx files store MatrixMarket format matrices. The base principle is to store the
     - Header line: total number of rows, total number of columns, total number of non-zeros entries (space separated)
     - Entries: row index, column index, entry value (space separated)  
 The gene and barcode labels are stored in separate files and need to be read separately.  
-* Sparse matrices (h5 format):  
+* Sparse matrices (MatrixMarket deconstructed into multiple vectors):  
 [Info here (10X's HDF5 format)](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/h5_matrices)  
-HDF5 can store MatrixMarket objects, but can also deconstruct the sparse matrix into multiple vectors: the sparse matrix is a Matrix Market object in RAM when used, but is not stored as one. The different vectors are:
+10X Genomics also deconstructs the sparse matrix into multiple vectors: the sparse matrix is a Matrix Market object in RAM when used, but is not stored as one under their HDF5 format. The different vectors are:
     - data: non-zero entry values (length: number of entries)
     - indices: row indices (length: number of entries)
     - indptr: column index pointers. Index of the start of each column (length: number of columns +1, the last value indicates the end index of the last column +1).
@@ -66,9 +71,6 @@ R base package [`Matrix`](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/h
 32738 x 1985 sparse Matrix of class "dgTMatrix"</pre></code> 
 
 Note: Even though Matrix is a base R package, it has to be loaded manually (`Packages` section in R studio or `library("Matrix")` in the R console.)
-
-## Loading H5 files in R
-A specific HDF5 package was developped for R. You can install it blablabla  
 
 # Python  
 

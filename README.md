@@ -10,9 +10,9 @@ __Julia__
 __R__  
 [Loading mtx files in R](#loading-mtx-files-in-r)
 [Loading H5 files in R](#loading-h5-files-in-r)  
-__Python__
-[Loading mtx files in Python](#loading-mtx-files-in-python)
-[Loading H5 files in Python](#loading-h5-files-in-python)
+__Python__  
+[Loading mtx files in Python](#loading-mtx-files-in-python)  
+[Loading H5 files in Python](#loading-h5-files-in-python)  
 
 # Basic information regarding data files
 Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays (**Reminder: Array indexing starts at 0 in Python, 1 in Julia, R and Matlab**). Dataframe objects (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.  

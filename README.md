@@ -38,15 +38,54 @@ Mtx files store MatrixMarket format matrices. The base principle is to store the
     - `indptr (or colptr)`: column index pointers. Index of the start of each column (length: number of columns +1, the last value indicates the end index of the last column +1).
     - `barcodes`: barcode labels (length: number of columns)
     - `gene_names`: gene labels (length: number of rows)  
-We can illustrate this concept with a Julia example. Lets' consider the following matrix:  
-`5×3 Array{Int64,2}:  
+We can illustrate this concept with a Julia example. Lets' consider the following matrix `M_dense`:  
+<pre><code>M_dense
+5×3 Array{Int64,2}:  
 1000  1200    0  
-0     0    2  
-2   400    0  
-0     0  500  
-0     0    0  
-`
+   0     0    2  
+   2   400    0  
+   0     0  500  
+   0     0    0  
+</pre></code>  
+The matching sparse matrix `M` is:
+<pre><code>M
+5×3 SparseMatrixCSC{Int64,Int64} with 6 stored entries:
+  [1, 1]  =  1000
+  [3, 1]  =  2
+  [1, 2]  =  1200
+  [3, 2]  =  400
+  [2, 3]  =  2
+  [4, 3]  =  500
+</pre></code> 
+The deconstructed vectors of M are:
+<pre><code>#non-zero entry values
+M.nzval
+Int64[6]
+1000
+2
+1200
+400
+2
+500
 
+#row index for each entry
+M.rowval 
+Int64[6]
+1
+3
+1
+3
+2
+4
+
+#start of each column. Length is #col +1
+M.colptr 
+Int64[4]
+1
+3
+5
+7
+</pre></code>
 
 
 # Julia  

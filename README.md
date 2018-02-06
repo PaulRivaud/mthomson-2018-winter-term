@@ -57,7 +57,7 @@ The matching sparse matrix `M` is:
   [4, 3]  =  500
 </pre></code> 
 The deconstructed vectors of M are:
-<pre><code>#non-zero entry values
+<pre><code>
 M.nzval
 Int64[6]
 1000
@@ -67,7 +67,6 @@ Int64[6]
 2
 500
 
-#row index for each entry
 M.rowval 
 Int64[6]
 1
@@ -77,7 +76,6 @@ Int64[6]
 2
 4
 
-#start of each column. Length is number of cols + 1
 M.colptr 
 Int64[4]
 1

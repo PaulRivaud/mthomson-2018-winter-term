@@ -57,6 +57,8 @@ Look up the [Installing packages](#installing-packages) section to learn more ab
 # R  
 
 ## Loading mtx files in R
-R base package [`Matrix`](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/html/externalFormats.html) lets you load .mtx files directly. The object is a [dgTMatrix](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/html/dgTMatrix-class.html).You can load a file as shown below:  
+R base package [`Matrix`](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/html/externalFormats.html) lets you load .mtx files directly. The returned object is a [dgTMatrix](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/html/dgTMatrix-class.html).You can load a file as shown below:  
 <pre><code>> readMM("path_to_matrix/matrix.mtx")  
 32738 x 1985 sparse Matrix of class "dgTMatrix"</pre></code> 
+
+`Note:` Even though Matrix is a base R package, it has to be loaded manually (`Packages` section in R studio or `library("Matrix")` in the R console.)

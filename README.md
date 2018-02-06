@@ -61,4 +61,7 @@ R base package [`Matrix`](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/h
 <pre><code>> readMM("path_to_matrix/matrix.mtx")  
 32738 x 1985 sparse Matrix of class "dgTMatrix"</pre></code> 
 
-`Note:` Even though Matrix is a base R package, it has to be loaded manually (`Packages` section in R studio or `library("Matrix")` in the R console.)
+Note: Even though Matrix is a base R package, it has to be loaded manually (`Packages` section in R studio or `library("Matrix")` in the R console.)
+
+## Loading H5 files in R
+A specific HDF5 package was developped for R. You can install it blablabla

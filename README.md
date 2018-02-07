@@ -169,14 +169,14 @@ end
 
 ## Loading mtx files in R
 R base package [`Matrix`](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/html/externalFormats.html) lets you load .mtx files directly. The returned object is a [dgTMatrix](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/html/dgTMatrix-class.html).You can load a file as shown below:  
-<pre><code>> readMM("path_to_matrix/matrix.mtx")  
+<pre><code>> readMM("my_path/matrix.mtx")  
 32738 x 1985 sparse Matrix of class "dgTMatrix"</pre></code> 
 
 Note: Even though Matrix is a base R package, it has to be loaded manually (through the `Packages` section in R studio or `library("Matrix")` in the R console.)
 
 ## Loading labels in R  
-<pre><code>barcodes<-scan("path_to_folder/barcodes.tsv",what='',sep='\n')</code></pre>  
-<pre><code>genes<-read.table("path_to_folder/genes.tsv",header=FALSE,sep='\t')[[2]]</code></pre>  
+<pre><code>barcodes<-scan("my_path/barcodes.tsv",what='',sep='\n')</code></pre>  
+<pre><code>genes<-read.table("my_path/genes.tsv",header=FALSE,sep='\t')[[2]]</code></pre>  
 
 # Python  
 
@@ -185,7 +185,7 @@ Mtx files can be loaded in Python using the `io` module of Scipy. There are mult
 <pre><code>pip install scipy</pre></code>  
 You can then use in Python:
 <pre><code>import scipy.io
-M = scipy.io.mmread('path_to_matrix/matrix.mtx')
+M = scipy.io.mmread('my_path/matrix.mtx')
 </pre></code>  
 M is a [coo_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html) object, you can use M.[tocsc](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.tocsc.html#scipy.sparse.coo_matrix.tocsc)() to convert the coo_matrix to a [csc_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html). The latter sorts the columns in the object which facilitates column-based operations.
 
@@ -197,7 +197,7 @@ genes =row[1].upper() for row in csv.reader(open('my_path/genes.tsv'), delimiter
 
 Note that you can also use very basic file processing if you find it easier:
 <pre><code>barcodes = []
-with open('mypath/barcodes.tsv') as f:
+with open('my_path/barcodes.tsv') as f:
     for line in f:
         barcodes.append(line.strip('\n'))
 </pre></code>  

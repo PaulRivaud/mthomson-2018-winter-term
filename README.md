@@ -7,6 +7,8 @@ __JULIA__
 [Installing Julia (and Juno)](#installing-julia-and-juno)  
 [Installing packages in Julia](#installing-packages-in-julia)  
 [Running the julia example](#running-the-julia-example)  
+[Loading mtx files in Julia](#loading-mtx-files-in-julia)  
+[Loading labels in Julia](#loading-labels-in-julia) 
 __R__  
 [Loading mtx files in R](#loading-mtx-files-in-r)  
 [Loading labels in R](#loading-labels-in-r)  
@@ -115,6 +117,12 @@ using packageName</pre></code>
 Prior to running the example featured in that repository, run the install_packages.jl script using the following:
 <pre><code>julia install_packages.jl</pre></code>  
 Look up the [Installing packages](#installing-packages) section to learn more about package management.
+
+## Loading mtx files in Julia
+r  
+
+## Loading labels in Julia
+rr
 
 # R  
 

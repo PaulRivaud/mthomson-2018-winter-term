@@ -57,8 +57,7 @@ The matching sparse matrix `M` is:
   [4, 3]  =  500
 </pre></code> 
 The deconstructed vectors of M are:
-<pre><code>
-M.nzval
+<pre><code>M.nzval
 Int64[6]
 1000
 2
@@ -125,22 +124,19 @@ Note: Even though Matrix is a base R package, it has to be loaded manually (thro
 Mtx files can be loaded in Python using the `io` module of Scipy. There are multiple ways to install Scipy (Homebrew, pip, conda, etc.). For example, type in your terminal:
 <pre><code>pip install scipy</pre></code>  
 You can then use in Python:
-<pre><code>
-import scipy.io
+<pre><code>import scipy.io
 M = scipy.io.mmread('path_to_matrix/matrix.mtx')
 </pre></code>  
 M is a [coo_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html) object, you can use M.[tocsc](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.tocsc.html#scipy.sparse.coo_matrix.tocsc)() to convert the coo_matrix to a [csc_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html). The latter sorts the columns in the object which facilitates column-based operations.
 
 ## Loading labels (.tsv files)
 The [csv](https://docs.python.org/2/library/csv.html) module will help you read cell and gene labels from the barcodes.tsv and genes.tsv files.
-<pre><code>
-barcodes = [row[0] for row in csv.reader(open('my_path/barcodes.tsv'), delimiter="\t")]  
+<pre><code>barcodes = [row[0] for row in csv.reader(open('my_path/barcodes.tsv'), delimiter="\t")]  
 genes =row[1].upper() for row in csv.reader(open('my_path/genes.tsv'), delimiter="\t")]
 </pre></code>  
 
 Note that you can also use very basic file processing if you find it easier:
-<pre><code>
-barcodes = []
+<pre><code>barcodes = []
 with open('mypath/barcodes.tsv') as f:
     for line in f:
         barcodes.append(line.strip('\n'))

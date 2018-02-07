@@ -8,7 +8,7 @@ __JULIA__
 [Installing packages in Julia](#installing-packages-in-julia)  
 [Running the julia example](#running-the-julia-example)  
 [Loading mtx files in Julia](#loading-mtx-files-in-julia)  
-[Loading labels in Julia](#loading-labels-in-julia) 
+[Loading labels in Julia](#loading-labels-in-julia)  
 __R__  
 [Loading mtx files in R](#loading-mtx-files-in-r)  
 [Loading labels in R](#loading-labels-in-r)  
@@ -19,9 +19,8 @@ __MATLAB__
 [Loading mtx files in Matlab](#loading-mtx-files-in-matlab)  
 [Loading labels in Matlab](#loading-labels-in-matlab)  
 
+# Basic information regarding data files  
 
-
-# Basic information regarding data files
 Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays (**Reminder: Array indexing starts at 0 in Python, 1 in Julia, R and Matlab**). Dataframe objects ie dense matrices (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.  
   
 Once unziped, the data folders contain three files:  
@@ -119,7 +118,15 @@ Prior to running the example featured in that repository, run the install_packag
 Look up the [Installing packages](#installing-packages) section to learn more about package management.
 
 ## Loading mtx files in Julia
-r  
+Once the MatrixMarket package installed, you can use the following:
+<pre><code>function read_csc(pathM::String)
+     x=MatrixMarket.mmread(pathM);
+     Float64.(x)
+end
+</code></pre>
+Note:  
+Strings in Julia must be delimited by double quotes (`"`), not single quotes (`'`).  
+The dot used after `Float64` applies [broadcasting](https://docs.julialang.org/en/stable/manual/arrays/#Broadcasting-1). It enables an operation to be applied to every entry in an object (it is similar to mapping).
 
 ## Loading labels in Julia
 rr

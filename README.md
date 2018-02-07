@@ -175,7 +175,8 @@ R base package [`Matrix`](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/h
 Note: Even though Matrix is a base R package, it has to be loaded manually (through the `Packages` section in R studio or `library("Matrix")` in the R console.)
 
 ## Loading labels in R  
-acrwea
+<pre><code>barcodes<-scan("path_to_folder/barcodes.tsv",what='',sep='\n')</code></pre>  
+<pre><code>barcodes<-scan("path_to_folder/barcodes.tsv",what='',sep='\n')</code></pre>  
 
 # Python  
 

@@ -211,6 +211,6 @@ If you want to use Matlab, you can download functions [here](https://math.nist.g
 
 ## Loading labels in Matlab
 <pre><code>barcodes = textscan(fopen('my_path/barcodes.tsv','r'),'%s');</pre></code>  
-Note: You can access the data with `barcodes{1}{i<sup>th</sup> element}`.
+Note: You can access the data using `barcodes{1}{i}`, where i is an index within the object range.
 
 <pre><code>barcodes = textscan(fopen('my_path/barcodes.tsv','r'),'%s');</pre></code>  

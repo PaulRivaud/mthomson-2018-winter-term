@@ -3,14 +3,21 @@
 This Github repository contains data files and code examples to get you started in the Computational Biology class taught by Matt Thomson at Caltech. The goal of this course is to have the students analyze some single-cell sequencing data using programming languages (Julia, R, Python, Matlab, etc.). The content of this README is listed below:  
   
 [Basic information regarding data files](#basic-information-regarding-data-files)  
-__Julia__  
+__JULIA__  
 [Installing Julia (and Juno)](#installing-julia-and-juno)  
 [Installing packages in Julia](#installing-packages-in-julia)  
 [Running the julia example](#running-the-julia-example)  
 __R__  
 [Loading mtx files in R](#loading-mtx-files-in-r)  
-__Python__  
+[Loading labels in R](#loading-labels-in-r)  
+__PYTHON__  
 [Loading mtx files in Python](#loading-mtx-files-in-python)  
+[Loading labels in Python](#loading-labels-in-python)  
+__MATLAB__  
+[Loading mtx files in Matlab](#loading-mtx-files-in-matlab)  
+[Loading labels in Matlab](#loading-labels-in-matlab)  
+
+
 
 # Basic information regarding data files
 Single-cell sequencing data is often stored as sparse matrix objects to cope with the data low density (~10-15% of the entries are non-zero entries). Working with sparse matrices is computationally more efficiency but requires more rigor when it comes down to keeping track of row and column labels, which are stored in separate arrays (**Reminder: Array indexing starts at 0 in Python, 1 in Julia, R and Matlab**). Dataframe objects ie dense matrices (R, Python) deal with that aspect but tend to perform slower and can be hard to load in memory when the datasets get larger.  
@@ -118,6 +125,9 @@ R base package [`Matrix`](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/h
 
 Note: Even though Matrix is a base R package, it has to be loaded manually (through the `Packages` section in R studio or `library("Matrix")` in the R console.)
 
+## Loading labels in R  
+acrwea
+
 # Python  
 
 ## Loading mtx files in Python
@@ -129,7 +139,7 @@ M = scipy.io.mmread('path_to_matrix/matrix.mtx')
 </pre></code>  
 M is a [coo_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html) object, you can use M.[tocsc](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.tocsc.html#scipy.sparse.coo_matrix.tocsc)() to convert the coo_matrix to a [csc_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html). The latter sorts the columns in the object which facilitates column-based operations.
 
-## Loading labels (.tsv files)
+## Loading labels in Python  
 The [csv](https://docs.python.org/2/library/csv.html) module will help you read cell and gene labels from the barcodes.tsv and genes.tsv files.
 <pre><code>barcodes = [row[0] for row in csv.reader(open('my_path/barcodes.tsv'), delimiter="\t")]  
 genes =row[1].upper() for row in csv.reader(open('my_path/genes.tsv'), delimiter="\t")]
@@ -140,5 +150,12 @@ Note that you can also use very basic file processing if you find it easier:
 with open('mypath/barcodes.tsv') as f:
     for line in f:
         barcodes.append(line.strip('\n'))
-</pre></code> 
+</pre></code>  
 
+# Matlab
+
+## Loading mtx files in Matlab  
+ff
+
+## Loading labels in Matlab
+wefw

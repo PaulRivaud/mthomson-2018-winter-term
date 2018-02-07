@@ -213,4 +213,4 @@ If you want to use Matlab, you can download functions [here](https://math.nist.g
 <pre><code>barcodes = textscan(fopen('my_path/barcodes.tsv','r'),'%s');</pre></code>  
 Note: You can access the data using `barcodes{1}{i}`, where i is an index within the object range.
 
-<pre><code>barcodes = textscan(fopen('my_path/barcodes.tsv','r'),'%s');</pre></code>  
+<pre><code>genes = textscan(fopen('my_path/barcodes.tsv','r'),'%s');</pre></code>  

@@ -205,7 +205,9 @@ with open('my_path/barcodes.tsv') as f:
 # Matlab
 
 ## Loading mtx files in Matlab  
-ff
+If you want to use Matlab, you can download function [here](https://math.nist.gov/MatrixMarket/mmio/matlab/mmiomatlab.html) to read and write MatrixMarket files. After loading the files in Matlab, you can simply use:
+
+<pre><code>m = mmread('my_path/matrix.mtx');</pre></code> 
 
 ## Loading labels in Matlab
 wefw

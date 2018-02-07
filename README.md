@@ -119,7 +119,11 @@ Look up the [Installing packages](#installing-packages) section to learn more ab
 
 ## Loading mtx files in Julia
 Once the MatrixMarket package installed, you can use the following:
-<pre><code>function read_csc(pathM::String)
+<pre><code>"""
+    read_csc(pathM)
+Read an mtx file pointed to by `pathM` and return a SparseMatrixCSC object.
+"""
+function read_csc(pathM::String)
      x=MatrixMarket.mmread(pathM);
      Float64.(x)
 end
@@ -129,7 +133,37 @@ Strings in Julia must be delimited by double quotes (`"`), not single quotes (`'
 The dot used after `Float64` applies [broadcasting](https://docs.julialang.org/en/stable/manual/arrays/#Broadcasting-1). It enables an operation to be applied to every entry in an object (it is similar to mapping).
 
 ## Loading labels in Julia
-rr
+<pre><code>"""
+    read_barcodes(tsvPath)
+Read a tsv file and return its values in an array of strings.
+"""
+function read_barcodes(tsvPath::String)
+    f=open(tsvPath)
+    lines=readlines(f)
+    a=String[]
+    for l in lines
+        push!(a,uppercase(l))
+    end
+    close(f)
+    return a
+end
+</code></pre>
+
+<pre><code>"""
+    read_genes(tsvPath)
+Read a tsv file and return its values in an array of strings.
+"""
+function read_genes(tsvPath::String)
+    f=open(tsvPath)
+    lines=readlines(f)
+    a=String[] #Array{}
+    for l in lines
+        push!(a,uppercase(split(l,"\t")[2]))
+    end
+    close(f)
+    return a
+end
+</code></pre>
 
 # R  
 

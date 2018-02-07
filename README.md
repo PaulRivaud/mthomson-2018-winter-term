@@ -176,7 +176,7 @@ Note: Even though Matrix is a base R package, it has to be loaded manually (thro
 
 ## Loading labels in R  
 <pre><code>barcodes<-scan("path_to_folder/barcodes.tsv",what='',sep='\n')</code></pre>  
-<pre><code>barcodes<-scan("path_to_folder/barcodes.tsv",what='',sep='\n')</code></pre>  
+<pre><code>genes<-read.table("path_to_folder/genes.tsv",header=FALSE,sep='\t')[[2]]</code></pre>  
 
 # Python  
 

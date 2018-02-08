@@ -2,9 +2,9 @@
 
 This Github repository contains data files and code examples to get you started in the Computational Biology class taught by Matt Thomson at Caltech. The goal of this course is to have the students analyze some single-cell sequencing data using programming languages (Julia, R, Python, Matlab, etc.). The content of this README is listed below:  
   
-__General Information__
-[Data structure](#data-structure)
-[Normalization](#normalization)
+__General Information__  
+[Data structure](#data-structure)  
+[Normalization](#normalization)  
 __JULIA__  
 [Installing Julia (and Juno)](#installing-julia-and-juno)  
 [Installing packages in Julia](#installing-packages-in-julia)  
@@ -32,7 +32,7 @@ Once unziped, the data folders contain three files:
 -- `barcodes.tsv`: a file containing the column (cell) labels.  
 -- `genes.tsv`: a file containing the row (gene) labels.  
 
-* Sparse Matrices (MatrixMarket/.mtx format):  
+* __Sparse Matrices (MatrixMarket/.mtx format):__  
 [Info here](https://math.nist.gov/MatrixMarket/formats.html#MMformat)  
 Mtx files store MatrixMarket format matrices. The base principle is to store the row and column indices of each non-zero entry in the matrix. The MatrixMarket format contains three distinct parts:  
     - Comment lines that start with `%`
@@ -41,7 +41,7 @@ Mtx files store MatrixMarket format matrices. The base principle is to store the
 
   The gene and barcode labels are stored in separate files and need to be read separately.  
 
-* Sparse matrices (MatrixMarket deconstructed into multiple vectors):  
+* __Sparse matrices (MatrixMarket deconstructed into multiple vectors):__  
 [Info here (10X's HDF5 format)](https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/advanced/h5_matrices)  
 10X Genomics also deconstructs sparse matrices into multiple vectors: the sparse matrix is a Matrix Market object in RAM when used, but is not stored as one under their HDF5 format. Storing all these vectors under one file enables users to not lose track of matrices respective's labels. The different vectors are:
     - `data (or nzval)`: non-zero entry values (length: number of entries)
@@ -98,7 +98,15 @@ Int64[4]
 [∧](#introduction)  
 
 ## Normalization  
-eewr
+
+There are various ways to normalize datasets (division, substraction, log, etc.). The two examples below do not form an exhaustive list of data normalization methods.  
+* __Column normalization:__  
+Column normalization aims at correcting sequencing depth differences found between cells. To column-normalize, divide each column (cell) of the matrix by its sum. An optional step is to multiply all columns by a common factor. If you multiply by 10^6, your matrix now contains counts per million.  
+
+* __Row normalization:__  
+Row normalization aims at correcting expression level differences found between genes: genes that correlate (up-regulated/down-regulated for the same cells) can have different different expression levels (low counts vs high counts). To row-normalize, divide each row (gene) of the matrix by its standard deviation. After doing so, all standard deviations equal to one. You can say that the gene expression levels were "aligned".
+
+
 
 [∧](#introduction)
 

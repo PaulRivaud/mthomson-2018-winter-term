@@ -104,9 +104,11 @@ There are various ways to normalize datasets (division, substraction, log, etc.)
 Column normalization aims at correcting sequencing depth differences found between cells. To column-normalize, divide each column (cell) of the matrix by its sum. An optional step is to multiply all columns by a common factor. If you multiply by 10^6, your matrix now contains counts per million.  
 
 * __Row normalization:__  
-Row normalization aims at correcting expression level differences found between genes: genes that correlate (up-regulated/down-regulated for the same cells) can have different different expression levels (low counts vs high counts). To row-normalize, divide each row (gene) of the matrix by its standard deviation. After doing so, all standard deviations equal to one. You can say that the gene expression levels were "aligned".
+Row normalization aims at correcting expression level differences found between genes: genes that correlate (up-regulated/down-regulated for the same cells) can have different different expression levels (low counts vs high counts). To row-normalize, divide each row (gene) of the matrix by its standard deviation. After doing so, all standard deviations equal to one. You can say that the gene expression levels have been "aligned".
 
-
+![alt text](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/distributions.png)
+  
+![alt text](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/distributions_normalized.png)
 
 [∧](#introduction)
 

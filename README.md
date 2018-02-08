@@ -225,5 +225,5 @@ If you want to use Matlab, you can download functions [here](https://math.nist.g
 Note: You can access the data using `barcodes{1}{i}`, where i is an index within the object range.
 
 <pre><code>genes = textscan(fopen('my_path/genes.tsv'),'%s%s');</pre></code>  
-Note: `genes{1}{i}` will give you return the i<up>th</up> gene's Ensembl name, whereas `genes{2}{i}` will return the i gene's symbol.
+Note: `genes{1}{i}` will give you return the ith gene's Ensembl name, whereas `genes{2}{i}` will return the ith gene's symbol.
 [∧](#introduction)

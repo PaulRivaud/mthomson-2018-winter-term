@@ -101,6 +101,26 @@ Int64[4]
 There are various ways to normalize datasets (division, substraction, log, etc.). The two examples below do not form an exhaustive list of data normalization methods.  
 * __Column normalization:__  
 Column normalization aims at correcting sequencing depth differences found between cells. To column-normalize, divide each column (cell) of the matrix by its sum. An optional step is to multiply all columns by a common factor. If you multiply by 10^6, your matrix now contains counts per million.  
+  
+Example matrix before normalization:  
+<pre><code>M
+5×3 Array{Int64,2}:  
+1000  1200    0  
+   0     0  300  
+ 300   400    0  
+ 200     0  500  
+   0   200    0  
+</pre></code>  
+
+After column normalization:  
+<pre><code>M_normalized
+5×3 Array{Int64,2}:  
+ .67   .67    0  
+   0     0 .375  
+  .2   .22    0  
+ .13     0 .625  
+   0   .11    0  
+</pre></code>  
 
 * __Row normalization:__  
 Row normalization aims at correcting expression level differences found between genes: genes that correlate (up-regulated/down-regulated for the same cells) can have different different expression levels (low counts vs high counts). To row-normalize, divide each row (gene) of the matrix by its standard deviation. After doing so, all standard deviations equal to one. You can say that the gene expression levels have been "aligned".

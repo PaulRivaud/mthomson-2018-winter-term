@@ -225,5 +225,6 @@ If you want to use Matlab, you can download functions [here](https://math.nist.g
 Note: `barcodes{1}{i}` will return the i^th^ cell's barcode.
 
 <pre><code>genes = textscan(fopen('my_path/genes.tsv'),'%s%s');</pre></code>  
-Note: `genes{1}{i}` will give you return the i^th^ gene's Ensembl name, whereas `genes{2}{i}` will return the i^th^ gene's symbol.
+Note: `genes{1}{i}` will give you return the i^th^ gene's Ensembl name, whereas `genes{2}{i}` will return the i^th^ gene's symbol.  
+
 [∧](#introduction)

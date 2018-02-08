@@ -91,7 +91,7 @@ Int64[4]
 7
 </pre></code>  
 
-[∧](#introduction)
+[[TOP]](#introduction)
 
 # Julia  
 
@@ -106,17 +106,20 @@ Select `JuliaPro-0.6.2.1 - MKL (for Linux)`, or the latest release. Once the dow
 * Mac OSX:  
 Select `JuliaPro-0.6.2.1-MKL (for Mac)`, or the latest release. Once the download is complete, uncompress the archive and go through the installation process.
 
-Those installations will install Julia (command line version) and should install Juno as well, a Julia IDE based on Atom. If you have trouble installing Juno, we recommend to look at this page: https://github.com/JunoLab/uber-juno/blob/master/setup.md.
+Those installations will install Julia (command line version) and should install Juno as well, a Julia IDE based on Atom. If you have trouble installing Juno, we recommend to look at this page: https://github.com/JunoLab/uber-juno/blob/master/setup.md.  
+[[TOP]](#introduction)
 
 ## Installing packages in Julia
 Packages are installed thanks to Julia commands (https://docs.julialang.org/en/stable/stdlib/pkg/). The most common way to install and use packages is:
 <pre><code>Pkg.add("packageName")  
 using packageName</pre></code>  
+[[TOP]](#introduction)
 
 ## Running the Julia example
 Prior to running the example featured in that repository, run the install_packages.jl script using the following:
 <pre><code>julia install_packages.jl</pre></code>  
-Look up the [Installing packages](#installing-packages) section to learn more about package management.
+Look up the [Installing packages](#installing-packages) section to learn more about package management.  
+[[TOP]](#introduction)
 
 ## Loading mtx files in Julia
 Once the MatrixMarket package installed, you can use the following:
@@ -131,7 +134,8 @@ end
 </code></pre>
 Note:  
 Strings in Julia must be delimited by double quotes (`"`), not single quotes (`'`).  
-The dot used after `Float64` applies [broadcasting](https://docs.julialang.org/en/stable/manual/arrays/#Broadcasting-1). It enables an operation to be applied to every entry in an object (it is similar to mapping).
+The dot used after `Float64` applies [broadcasting](https://docs.julialang.org/en/stable/manual/arrays/#Broadcasting-1). It enables an operation to be applied to every entry in an object (it is similar to mapping).  
+[[TOP]](#introduction)
 
 ## Loading labels in Julia
 <pre><code>"""
@@ -164,7 +168,8 @@ function read_genes(tsvPath::String)
     close(f)
     return a
 end
-</code></pre>
+</code></pre>  
+[[TOP]](#introduction)
 
 # R  
 
@@ -173,11 +178,13 @@ R base package [`Matrix`](https://stat.ethz.ch/R-manual/R-devel/library/Matrix/h
 <pre><code>> readMM("my_path/matrix.mtx")  
 32738 x 1985 sparse Matrix of class "dgTMatrix"</pre></code> 
 
-Note: Even though Matrix is a base R package, it has to be loaded manually (through the `Packages` section in R studio or `library("Matrix")` in the R console.)
+Note: Even though Matrix is a base R package, it has to be loaded manually (through the `Packages` section in R studio or `library("Matrix")` in the R console.)  
+[[TOP]](#introduction)
 
 ## Loading labels in R  
 <pre><code>barcodes<-scan("my_path/barcodes.tsv",what='',sep='\n')</code></pre>  
 <pre><code>genes<-read.table("my_path/genes.tsv",header=FALSE,sep='\t')[[2]]</code></pre>  
+[[TOP]](#introduction)
 
 # Python  
 
@@ -188,7 +195,8 @@ You can then use in Python:
 <pre><code>import scipy.io
 M = scipy.io.mmread('my_path/matrix.mtx')
 </pre></code>  
-M is a [coo_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html) object, you can use M.[tocsc](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.tocsc.html#scipy.sparse.coo_matrix.tocsc)() to convert the coo_matrix to a [csc_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html). The latter sorts the columns in the object which facilitates column-based operations.
+M is a [coo_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.html) object, you can use M.[tocsc](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_matrix.tocsc.html#scipy.sparse.coo_matrix.tocsc)() to convert the coo_matrix to a [csc_matrix](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_matrix.html). The latter sorts the columns in the object which facilitates column-based operations.  
+[[TOP]](#introduction)
 
 ## Loading labels in Python  
 The [csv](https://docs.python.org/2/library/csv.html) module will help you read cell and gene labels from the barcodes.tsv and genes.tsv files.
@@ -202,16 +210,19 @@ with open('my_path/barcodes.tsv') as f:
     for line in f:
         barcodes.append(line.strip('\n'))
 </pre></code>  
+[[TOP]](#introduction)
 
 # Matlab
 
 ## Loading mtx files in Matlab  
 If you want to use Matlab, you can download functions [here](https://math.nist.gov/MatrixMarket/mmio/matlab/mmiomatlab.html) to read and write MatrixMarket files. After loading the files in Matlab, you can simply use:
 
-<pre><code>m = mmread('my_path/matrix.mtx');</pre></code> 
+<pre><code>m = mmread('my_path/matrix.mtx');</pre></code>  
+[[TOP]](#introduction)
 
 ## Loading labels in Matlab
 <pre><code>barcodes = textscan(fopen('my_path/barcodes.tsv','r'),'%s');</pre></code>  
 Note: You can access the data using `barcodes{1}{i}`, where i is an index within the object range.
 
 <pre><code>genes = textscan(fopen('my_path/barcodes.tsv','r'),'%s');</pre></code>  
+[[TOP]](#introduction)

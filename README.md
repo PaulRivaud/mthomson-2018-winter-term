@@ -49,6 +49,7 @@ Mtx files store MatrixMarket format matrices. The base principle is to store the
     - `indptr (or colptr)`: column index pointers. Index of the start of each column (length: number of columns +1, the last value indicates the end index of the last column +1).
     - `barcodes`: barcode labels (length: number of columns)
     - `gene_names`: gene labels (length: number of rows)  
+    
 We can illustrate this concept with a Julia example. Lets' consider the following matrix `M_dense`:  
 <pre><code>M_dense
 5×3 Array{Int64,2}:  

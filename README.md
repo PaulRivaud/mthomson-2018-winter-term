@@ -5,6 +5,8 @@ This Github repository contains data files and code examples to get you started 
 __General Information__  
 [Data structure](#data-structure)  
 [Normalization](#normalization)  
+[Dimensionality reduction](#dimensionality-reduction)  
+[Clustering](#clustering)  
 __JULIA__  
 [Installing Julia (and Juno)](#installing-julia-and-juno)  
 [Installing packages in Julia](#installing-packages-in-julia)  
@@ -133,6 +135,23 @@ Before normalization: Similar distributions of three genes with different means.
 After normalization:
   
 ![alt text](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/distributions_normalized.png)
+
+[∧](#introduction)
+
+## Dimensionality reduction
+Dimensionality reduction methods enable users to analyze high-dimensional problems through a reduced low-dimensional space. In our case, cells are described by ~20,000+ variables, which are genes. It is possible to reduce that number by obtaining a set of principal variables. Dimensionality reduction can be divided into two parts: feature selection (using a subset of variables only) and feature extraction (combining variables to obtain a limited number of macro variables).
+  
+  * __Principal Component Analysis ([PCA](https://en.wikipedia.org/wiki/Principal_component_analysis))__:  
+  PCA is one of the main techniques in dimensionality reduction. It reduces the high-dimensional space in a way that the data variance is maximized in the low-dimensional space. The new variables, called principal components (PC1, PC2, etc.) are linear combinations of the original variables (genes). Each cell gets scores for each principal component.  
+  
+  * __Non-negative Matrix Factorization ([NMF](https://en.wikipedia.org/wiki/Non-negative_matrix_factorization))__:  
+  
+
+[∧](#introduction)
+
+## Clustering
+sergxer
+
 
 [∧](#introduction)
 

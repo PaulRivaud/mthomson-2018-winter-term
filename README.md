@@ -146,8 +146,8 @@ Dimensionality reduction methods enable users to analyze high-dimensional proble
   
   * __Non-negative Matrix Factorization ([NMF](https://en.wikipedia.org/wiki/Non-negative_matrix_factorization))__:  
   NMF shows similarities to NMF. 
-  ![alt text](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/distributions_normalized.png)
-  https://en.wikipedia.org/wiki/Non-negative_matrix_factorization#/media/File:NMF.png
+  ![alt text](https://upload.wikimedia.org/wikipedia/commons/f/f9/NMF.png)
+
 
 [∧](#introduction)
 

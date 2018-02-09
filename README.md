@@ -143,10 +143,16 @@ Dimensionality reduction methods enable users to analyze high-dimensional proble
   
   * __Principal Component Analysis ([PCA](https://en.wikipedia.org/wiki/Principal_component_analysis))__:  
   PCA is one of the main techniques in dimensionality reduction. It reduces the high-dimensional space in a way that the data variance is maximized in the low-dimensional space. The new variables, called principal components (PC1, PC2, etc.) are linear combinations of the original variables (genes). Each cell gets scores for each principal component.  
+  Note: Since PCA is often a column-based method, it might be necessary to transpose the gene expression matrix (variables must be columns in that case).
   
   * __Non-negative Matrix Factorization ([NMF](https://en.wikipedia.org/wiki/Non-negative_matrix_factorization))__:  
-  NMF shows similarities to NMF. 
-  ![alt text](https://upload.wikimedia.org/wikipedia/commons/f/f9/NMF.png)
+  NMF works under the condition that values must be positive (as opposed to PCA). It factorizes a matrix V into two matrices W and H so that W.H ~ V. With V of size (m,n), W and H will have respective sizes (m,k) and (k,n), so that rows of W can be multiplied with columns of H (both of length k).  
+  
+  ![alt text](https://upload.wikimedia.org/wikipedia/commons/f/f9/NMF.png)  
+  
+  Each column of W is a feature, i.e. a linear combination of genes that can be relevant to a group of cells / a cell type. Each column of H is a cell and contains its scores for all k features.
+  
+  Talk about optimization, KL divergence blabla
 
 
 [∧](#introduction)

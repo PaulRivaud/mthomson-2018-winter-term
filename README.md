@@ -145,7 +145,9 @@ Dimensionality reduction methods enable users to analyze high-dimensional proble
   PCA is one of the main techniques in dimensionality reduction. It reduces the high-dimensional space in a way that the data variance is maximized in the low-dimensional space. The new variables, called principal components (PC1, PC2, etc.) are linear combinations of the original variables (genes). Each cell gets scores for each principal component.  
   
   * __Non-negative Matrix Factorization ([NMF](https://en.wikipedia.org/wiki/Non-negative_matrix_factorization))__:  
-  
+  NMF shows similarities to NMF. 
+  ![alt text](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/distributions_normalized.png)
+  https://en.wikipedia.org/wiki/Non-negative_matrix_factorization#/media/File:NMF.png
 
 [∧](#introduction)
 

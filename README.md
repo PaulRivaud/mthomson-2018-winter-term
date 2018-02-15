@@ -152,7 +152,7 @@ Dimensionality reduction methods enable users to analyze high-dimensional proble
   
   Each column of W is a feature, i.e. a linear combination of genes that can be relevant to a group of cells / a cell type. Each column of H is a cell and contains its scores for all k features.
   
-  Talk about optimization, KL divergence blabla
+  Talk about optimization, KL divergence
 
 
 [∧](#introduction)

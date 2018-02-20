@@ -126,9 +126,10 @@ After column normalization:
 </pre></code>  
 
 * __Row normalization:__  
-Row normalization aims at correcting expression level differences found between genes: genes that correlate (up-regulated/down-regulated for the same cells) can have different different expression levels (low counts vs high counts). To row-normalize, divide each row (gene) of the matrix by its standard deviation. After doing so, all standard deviations equal to one. You can say that the gene expression levels have been "aligned".
+
+Row normalization aims at correcting expression level differences found between genes (distribution spread). To row-normalize, divide each row (gene) of the matrix by its standard deviation. After doing so, all standard deviations equal to one.
   
-Before normalization: Similar distributions of three genes with different means.
+Before normalization: Three genes with different means and standard deviations:
   
 ![alt text](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/distributions.png)
   

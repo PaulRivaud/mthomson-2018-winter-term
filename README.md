@@ -126,7 +126,6 @@ After column normalization:
 </pre></code>  
 
 * __Row normalization:__  
-
 Row normalization aims at correcting expression level differences found between genes (distribution spread). To row-normalize, divide each row (gene) of the matrix by its standard deviation. After doing so, all standard deviations equal to one.
   
 Before normalization: Three genes with different means and standard deviations:
@@ -135,7 +134,9 @@ Before normalization: Three genes with different means and standard deviations:
   
 After normalization:
   
-![alt text](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/distributions_normalized.png)
+![alt text](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/distributions_normalized.png)  
+  
+Another common way to row normalize is to substract the gene mean first, i.e. ![equation](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/standard_norm.gif)  
 
 [∧](#introduction)
 

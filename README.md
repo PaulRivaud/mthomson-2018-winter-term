@@ -136,7 +136,7 @@ After normalization:
   
 ![alt text](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/distributions_normalized.png)  
   
-Another common way to row normalize is to substract the gene mean first, i.e. ![equation](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/standard_norm.gif)  
+Another common way to row normalize is to substract the gene mean first, i.e. ![equation](https://github.com/PaulRivaud/mthomson-2018-winter-term/blob/master/rsc/standard_norm.gif). This method (called standard normalization) has the disadvantage to induce negative values in the data because of the mean-centering step. The latter is required in methods such as PCA, but some methods like NMF (see section below) work under the positive values only constraint.
 
 [∧](#introduction)
 
